@@ -1,213 +1,453 @@
-----
-# **PROGRAMMING FOR PROBLEM SOLVING ESC-18105**
-----
-----
----
-## **NAME** - ***KAVLEEN KOUR***
-## **ROLL NO.** - *1914063*
-## **BRANCH** - *CIVIL ENGINEERING*
-'''
----
-----
+# Programming for problem solving
+# ESC-18104/18105
 
-#         PROGRAMS
+![logo](https://raw.githubusercontent.com/sauravsagar786/practical.md/master/images.jpeg)
 
-----
 
-## 1. ADD TWO NUMBERS
-```C
-#include<stdio.h>
-void main()
-{
-        int a,b;
-        printf("Enter the two number to be added\n");
-        scanf("%d%d",&a,&b);
-        printf("Sum  : %d + %d = %d \n",a,b,a+b);
 
-}
-```
+## _By_ 
+ 
 
-----
-## 2. AVG.OF N NUMBER
-```C
-#include<stdio.h>
-void main()     
-{
-        int n;
-        float sum=0;
-        printf("Enter number of elements \n");
+ #### Name: _Kavleen kour_
+ 
+ #### Roll_no: _1914063_
+ 
+ #### Branch: _Civil_
+ 
+ #### Section: _B1_
+ 
+ 
+ 
+ # PROGRAMS
+    1. Write a C Program to Add Two Integers. 
+    2. Write a C Program to Multiply two Floating Point Numbers 
+    3. Write a C Program to Check Whether a Number is Even or Odd using if else statement.
+    4. Write a C Program to calculate the sum of first 10 natural numbers using for loop. 
+    5. Write a C Program to print EVEN numbers from 1 to N using while loop. 
+    6. Write a C Program to print ODD numbers from 1 to N using do while loop. 
+    7. Write a C Program to create a simple calculator using switch Statement. 
+    8. Write a C Program to find the max between two numbers uding function. 
+    9. Write a program in C to check whether a number is a prime or not using the function. 
+    10.Write a C Program for function (using call by value). 
+    11. Write a C Program for function (using call by reference). 
+    12.Write a C Program to take 5 values from the user and store them in an array. Print the elements stored in the array. 
+    13.Write a C Program to find the average of n numbers using arrays. 
+    14.Write a C Program to accept Sorted Array and do Search using Binary Search . 
+    15.Write a C Program to Implement Linear Search. 
+    16.Write a C Program to Sort N Numbers in Ascending Order using Bubble Sort. 
+    17.Write a C program to declare, assign and access a pointer variable. 
+    18.Write a C Program to Store Information of a Student Using Structure 
+    19.Write a C Program to Find Factorial of a Number Using Recursion. 
+    20.Write a C Program to display Fibonacci Series using recursion.
+     
+   # 1.Write a program to add two numbers :
+   
+   ## Input
+   
+    #include <stdio.h>
+     int main()
+    {
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+    
+    printf("Enter two integers: ");
+    scanf("%d %d", &firstNumber, &secondNumber);
+    sumOfTwoNumbers = firstNumber + secondNumber;      
+    printf("%d + %d = %d", firstNumber, secondNumber, sumOfTwoNumbers);
+    return 0;
+    }
+  
+   ## Output
+   
+    Enter two integers: 12 11
+      12 + 11 = 23
+      
+   # 2. Write a C Program to Multiply two Floating Point Numbers
+    
+   ## Input
+   
+    #include <stdio.h>
+    int main()
+    {
+    double firstNumber, secondNumber, product;
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &firstNumber, &secondNumber); 
+    product = firstNumber * secondNumber;  
+    printf("Product = %.2lf", product);
+    
+    return 0;
+    }
+    
+   ## Output
+   
+    Enter two numbers: 2.4
+    1.12
+    Product = 2.69
+    
+# 3. Write a C Program to Check Whether a Number is Even or Odd using if else statement
 
-        scanf("%d",&n);
-        int a[n];
-        printf(" now enter %d elements\n",n);
-        for(int i=1;i<=n;i++)
-        {       
-                scanf("%d",&a[i]);
-                sum+=a[i];
-        }
-        float avg;
-        avg = sum/n;
-        printf("Average of %d elements is %0.2f \n",n,avg);
-}       
-```
+   ## Input
+   
+    #include <stdio.h>
+    int main()
+    {
+    int number;
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    // True if the number is perfectly divisible by 2
+    if(number % 2 == 0)
+        printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+    return 0;
+    }
+  ## Output
 
-----
-## 3. WEEKDAYS BY USING SWITCH STATEMENT
-```C
-#include<stdio.h>
-void main()
-{
-        int a;
-        printf("Enter any integer between 1 to 7\n");
-        scanf("%d",&a);
-        switch(a)
+    Enter an integer: -7
+    -7 is odd.
+# 4. Write a C Program to calculate the sum of first 10 natural numbers using for loop
+
+  ## Input
+  
+    #include <stdio.h>
+    void main()
+    {
+    int  j, sum = 0;
+    printf("The first 10 natural number is :\n");
+    for (j = 1; j <= 10; j++)
+    {
+        sum = sum + j;
+        printf("%d ",j);    
+    }
+    printf("\nThe Sum is : %d\n", sum);
+    }
+ ## OUTPUT
+
+    The first 10 natural number is :                                                                              
+    1 2 3 4 5 6 7 8 9 10                                                                                          
+    The Sum is : 55
+
+# 5. Write a C Program to print EVEN numbers from 1 to N using while loop.
+
+    #include <stdio.h>
+    int main()
+    {
+    int i, n;
+    printf("Print all even numbers till: ");
+    scanf("%d", &n);
+    printf("All even numbers from 1 to %d are: \n", n);
+    i=1;
+    while(i<=n)
+    {
+        if(i%2==0)
         {
-                case 1:
-                        printf("MONDAY\n");
-                        break;
-                case 2:
-                        printf("TUESDAY\n");
-                        break;
-                case 3:
-                        printf("WEDNESDAY\n");
-                        break;
-                case 4:
-                        printf("THRUSDAY\n");
-                        break;
-                case 5:
-                        printf("FRIDAY\n");
-                        break;
-                case 6:
-                        printf("SATURDAY\n");
-                        break;
-                case 7:
-                        printf("SUNDAY\n");
-                        break;
-                default :
-                        printf("Enter number between 1 to 7\n");
-                        break;
+            printf("%d\n", i);
         }
-}  
-```
-
-----
-## 4. NUMBER IS EVEN OR ODD
-```C
-#include<stdio.h>
-void main()
-{
-        int a;
-        printf("enter the number\n");
-        scanf("%d",&a);
-        if(a%2==0)
-                printf("EVEN\n");
-        else
-                printf("ODD\n");
-}
-```
-
-----
-## 5. TABLE OF ANY NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int n,i;
-        printf("enter the number \n");
-        scanf("%d",&n);
-        printf("\t\t\tTABLE OF %d\n",n);
-        printf("\t\t\t==========\n");
-        for(i=1;i<11;i++)
-        {
-                printf("%d * %d = %d\n",n,i,n*i);
-        }               
-        return 0;       
-}
-```
-
-----
-## 6. ARMSTRONG NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int sum=0,digit;
-        int n, temp;
-        printf("enter any positive integer number");
-        scanf("%d",&n);
-        temp=n;
-        while(temp>0)
-        {
-                digit=temp%10;
-                temp/=10;
-                sum=sum+digit*digit*digit;
-        }
-        if(n==sum)
-                printf("\n %d is a armstrong number\n",n);
-        else
-                printf("\n %d is not a armstrong number\n",n);
-}
-```
-
-----
-## 7. CALCULATOR
-```C
-#include<stdio.h>
+        i++;
+    }
+    return 0;
+    }
 
 
-void main()
-{
-        
-        puts(" _______________ ");
-        puts("|_______________|");
-        puts("| 1 | 2 | 3 |   |");
-        puts("|___|___|___|   |");
-        puts("| 4 | 5 | 6 | + |");
-        puts("|___|___|___|___|");
-        puts("| 7 | 8 | 9 | - |");
-        puts("|___|___|___|___|");
-        puts("|     0     | * |");
-        puts("|___________|___|");
+## OUTPUT
 
-}
-```
-----
-## 8. BUBBLE SORT
-```C
-#include<stdio.h>
-int main()
-{
-        int i,n,k,temp;
-        printf("\n enter the array size\n");
-        scanf("%d",&n);
-        int a[n];
-        printf("enter %d elements of array\n",n);
-        for(i=0;i<n;i++)
-                scanf("%d",&a[i]);
-        for(k=0;k<n-1;k++)
-        {
-                for(i=0;i<n-k-1;i++)
-                {
-                        if(a[i]>a[i+1])
-                        {
-                                temp=a[i];
-                                a[i]=a[i+1];
-                                a[i+1]=temp;
-                        }
-                }
-        }
-        printf("\n array elements after shorting\n");
-        for(i=0;i<n;i++)
-                printf("%d\t",a[i]);
-        printf("\n");
-}
-```
+    Print all even numbers till: 7
+    All even numbers from 1 to 7 are: 
+    2
+    4
+    6
 
-## 9. BINARY SEARCH
-```C
-#include<stdio.h>
-int main()      
-{               
+# 6. Write a C Program to print ODD numbers from 1 to N using do while loop.
+
+    #include<stdio.h>
+    int main()
+    {
+	   int number;
+	   int n;
+   	number=1;
+	   printf("Enter the value of N: ");
+	   scanf("%d",&n);
+	   printf("Odd Numbers from 1 to %d:\n",n);
+   	while(number<=n)
+  	{
+		  if(number%2 != 0)
+		 	printf("%d ",number);
+			 	number++;
+  	}
+  	return 0;
+    }
+## OUTPUT
+
+    Enter the value of N: 7
+    Odd Numbers from 1 to 7:
+    1 3 5 7 
+    
+# 7. Write a C Program to create a simple calculator using switch Statement.
+
+    #include<stdio.h>
+    int main() 
+    {
+    char operator;
+    double firstNumber,secondNumber;
+    printf("Enter an operator (+, -, *,): ");
+    scanf("%c", &operator);
+    printf("Enter two operands: ");
+    scanf("%lf %lf",&firstNumber, &secondNumber);
+    switch(operator)
+    {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber + secondNumber);
+            break;
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber - secondNumber);
+            break;
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber * secondNumber);
+            break;
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber / secondNumber);
+            break;
+        // operator doesn't match any case constant (+, -, *, /)
+        default:
+            printf("Error! operator is not correct");
+    }
+    
+    return 0;
+    }
+
+
+## OUTPUT
+
+    Enter an operator (+, -, *,): +
+    Enter two operands: 45
+    8
+    45.0 + 8.0 = 53.0
+
+# 8. Write a C Program to find the max between two numbers uding function 
+
+    #include <stdio.h>
+    int max(int num1, int num2);
+    int main() 
+    {
+    int num1, num2, maximum;
+    printf("Enter any two numbers: ");
+    scanf("%d%d", &num1, &num2);
+    maximum = max(num1, num2); 
+    printf("\nMaximum = %d\n", maximum);
+    return 0;
+    }
+    int max(int num1, int num2)
+    {
+    return (num1 > num2 ) ? num1 : num2;
+    }
+
+
+## OUTPUT
+
+    Enter any two numbers: 45
+    67
+
+    Maximum = 67
+
+
+# 9. Write a program in C to check whether a number is a prime or not using the function.
+
+    #include<stdio.h>
+    int check_prime(int);
+    main()
+    {
+    int n, result;
+    printf("Enter an integer to check whether it is prime or not.\n");
+    scanf("%d",&n);
+    result = check_prime(n);
+    if ( result == 1 )
+      printf("%d is prime.\n", n);
+    else
+      printf("%d is not prime.\n", n);
+    return 0;
+    }
+    int check_prime(int a)
+    {
+    int c;
+    for ( c = 2 ; c <= a - 1 ; c++ )
+    { 
+      if ( a%c == 0 )
+     return 0;
+    }
+    return 1;
+    }
+
+
+## OUTPUT
+
+    Enter an integer to check whether it is prime or not.
+    11
+    11 is prime.
+
+# 10. Write a C Program for function (using call by value)
+
+    #include<stdio.h>
+    void swap(int a,int b);
+    void main()
+    {
+    int x,y;
+    printf("\n Enter value for x:");
+    scanf("%d",&x);
+    printf("\n Enter value for y:");
+    scanf("%d",&y);
+    printf("\n Before calling swap function\n");
+    printf("\n Value of x=%d,Value of y=%d\n",x,y);
+    swap(x,y);
+    printf("\n After returning from swap function");
+    printf("\n Value of x=%d,value of y=%d\n",x,y);
+    }
+    void swap(int a,int b)
+    {
+    int temp;
+    printf("\n Inside the function \n");
+    printf("\n Value of a=%d,Value of b=%d before swaping\n",a,b);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("\n Value of a=%d,Value of b=%d after swaping\n",a,b);
+    }
+
+
+## OUTPUT
+
+
+    Enter value for x:65
+    Enter value for y:89
+
+    Before calling swap function
+    Value of x=65,Value of y=89
+
+    Inside the function 
+
+    Value of a=65,Value of b=89 before swaping
+    Value of a=89,Value of b=65 after swaping
+
+    After returning from swap function
+    Value of x=65,value of y=89
+
+
+# 11. Write a C Program for function (using call by reference).
+    #include<stdio.h>
+    void swap(int *,int *);
+    void main()
+    {
+    int x,y;
+    printf("\n Enter value for x:");
+    scanf("%d",&x);
+    printf("\n Enter value for y:");
+    scanf("%d",&y);
+    printf("\n Before calling swap function\n");
+    printf("\n Value of x=%d,Value of y=%d\n",x,y);
+    swap(&x,&y);
+    printf("\n After returning from swap function");
+    printf("\n Value of x=%d,value of y=%d\n",x,y);
+    }
+    void swap(int *a,int *b)
+    {
+    int temp;
+    printf("\n Inside the function \n");
+    printf("\n Value of a=%d,Value of b=%d before swaping\n",*a,*b);
+    temp=*a;
+    *a=*b;
+    *b=temp;
+    printf("\n Value of a=%d,Value of b=%d after swaping\n",*a,*b);
+    }
+
+
+## OUTPUT
+
+    Enter value for x:56
+    Enter value for y:78
+
+    Before calling swap function
+    Value of x=56,Value of y=78
+
+    Inside the function 
+
+    Value of a=56,Value of b=78 before swaping
+    Value of a=78,Value of b=56 after swaping
+
+    After returning from swap function
+    Value of x=78,value of y=56
+
+# 12. Write a C Program to take 5 values from the user and store them in an array. Print the elements stored in the array
+
+    #include <stdio.h>
+    int main() 
+    {
+    int values[5];
+    printf("Enter 5 integers: ");
+    for(int i = 0; i < 5; ++i) {
+     scanf("%d", &values[i]);
+    }
+    printf("Displaying integers: ");
+    for(int i = 0; i < 5; ++i)
+    {
+     printf("%d\n", values[i]);
+    }
+    return 0;
+    }
+
+
+## OUTPUT
+
+    Enter 5 integers: 52
+    12
+    36
+    91
+    03
+    Displaying integers: 52
+    12
+    36
+    91
+    3
+
+# 13. Write a C Program to find the average of n numbers using arrays.
+
+    #include <stdio.h>
+    int main()
+    {
+    int n, i;
+    float num[100], sum = 0.0, average;
+    printf("Enter the numbers of elements: ");
+    scanf("%d", &n);
+    while (n > 100 || n <= 0)
+    {
+        printf("Error! number should in range of (1 to 100).\n");
+        printf("Enter the number again: ");
+        scanf("%d", &n);
+    }
+    for(i = 0; i < n; ++i)
+    {
+        printf("%d. Enter number: ", i+1);
+        scanf("%f", &num[i]);
+        sum += num[i];
+    }
+    average = sum / n;
+    printf("Average = %.2f", average);
+    return 0;
+
+
+
+## OUTPUT
+
+    Enter the numbers of elements: 5
+    1. Enter number: 78
+    2. Enter number: 98
+    3. Enter number: 32
+    4. Enter number: 08
+    5. Enter number: 72
+    Average = 57.60
+
+# 14. Write a C Program to accept Sorted Array and do Search using Binary Search .
+
+     #include<stdio.h>
+    int main()      
+    {               
         int m,n,a[100],search,first,last,middle;
         printf("Enter the size of array");
         scanf("%d",&m);
@@ -239,447 +479,261 @@ int main()
         if(first>last)
                 printf("Not found! %d is not present in the list \n",search);
         return 0;
-}
-```
-----
-## 10. FACTORIAL OF n NUMBER
-```C
-              
-#include<stdio.h>
-int main()
-{       
-        int n;
-        printf("enter number\n");
-        scanf("%d",&n);
-        int p=1;
-        for(int i=1;i<=n;i++)
-        {
-                p*=i;
-        }
-        printf("%d! = %d \n",n,p);
-}
-```
-----
-##  11. FIZZ-BUZZ GAME
-```C
-#include<stdio.h>
-int main()
-{
-        for(int i=1;i<=30;i++)
-                {
-                        if(i%15==0)
-                                printf("fizzbuzz\n");
-                        else if(i%5==0)
-                                printf("buzz\n");
-                        else if(i%3==0)
-                                printf("fizz\n");
-                        else {printf("%d\n",i);}
-                }
-        return 0;
-}
-```
+      }
 
-----
-## 12. SUM OF FIRST 100 NUMBERS
-```C
-#include<stdio.h>
-int main()
-{
-        int sum=0,i=1;
-        while(i<101)
-        {
-                sum =sum+i;
-                i++;
-        }
-        printf("sum of numbers from 0 to 100 is %d\n",sum);
-        return 0;
-}
-```
 
-----
-## 13. FIND GREATER BETWEEN TWO GIVEN NUMBERS
-```C
-#include<stdio.h>
-void main()
-{       
-        float a,b;
-        printf("enter first number\n");
-        scanf("%f",&a);
-        printf("enter the second nummber\n");
-        scanf("%f",&b);
-        if(a>b)
-                printf("%f is greater\n",a);
-        else if(b>a)
-                printf("%f is greater\n",b);
-        else    
-                printf("both numbers are equal\n");
-}
-```
-----
-## 14. GREATER AMONG THREE NUMBERS
-```C
-#include<stdio.h>
-void main()
-{
-int a,b,c;
-printf("enter the three numbers which you want to compare \n");
-scanf("%d%d%d",&a,&b,&c);
-if(a>b&&a>c)
-printf("\n%d is the greatest number\n",a);
-else if(b>a&&b>c)
-printf("\n%d is the greatest number\n",b);
-else 
-printf("\n%d is the greatest number\n",c);
-}
-```
-----
-## 15. GREATEST INTEGER FUNCTION
-```C
-#include<stdio.h>
-int gcd(int a,int b)
-{
-        int c;
-        c=a%b;
-        if(c==0)
-                return b;
-        else 
-                gcd(b,c);
-}
-int main()
-{
-        int m,n,c;
-        scanf("%d%d",&m ,&n);
-        c=gcd(m,n);
-        printf("\n gcd is %d \n",c);
-        return 0;
-}
+## OUTPUT
 
-                         
-                                     **********************OR*******************
-                                     
-                                     
-                                     
-#include<stdio.h>
-int main()
-{       
-        int m,n,r=1;
-        printf("\nEnter value for m,n\n");
-        scanf("%d%d",&m,&n);
-        while(r!=0)
-        {
-                r=n%m;
-                n=m;
-                m=r;
-        }               
-        printf("\nGCD=%d\n",n);
-        return 0;
-}                       
-```
- ----
- ## 16. LEAP YEAR CHECK
- ```C
- #include <stdio.h>
+    Enter the size of array6
+    Enter 6 numbar
+    75
+    33
+    42
+    12
+    76
+    22
+    Enter the the number u want to search
+    42
+    42 found at location 3
+
+# 15. Write a C Program to Implement Linear Search
+
+    #include <stdio.h>
     int main()
     {
-        int year;
-        printf("Enter a year: ");
-        scanf("%d",&year);
-        if(year%4 == 0)
-        {
-            if( year%100 == 0)
-            {
-                // year is divisible by 400, hence the year is a leap year
-                if ( year%400 == 0)
-                    printf("%d is a leap year.", year);
-                else
-                    printf("%d is not a leap year.", year);
-            }
-            else
-                printf("%d is a leap year.", year );
-        }
-        else
-            printf("%d is not a leap year.", year);
-        
-        return 0;
+    int array[100], search, c, n;
+    printf("Enter number of elements in array\n");
+    scanf("%d", &n);
+    printf("Enter %d integer(s)\n", n);
+    for (c = 0; c < n; c++)
+    scanf("%d", &array[c]);
+    printf("Enter a number to search\n");
+    scanf("%d", &search);
+     for (c = 0; c < n; c++)
+    {
+    if (array[c] == search)    /* If required element is found */
+    {
+      printf("%d is present at location %d.\n", search, c+1);
+      break;
     }
----
-```
-### OUTPUT
+    }
+    if (c == n)
+    printf("%d isn't present in the array.\n", search);
+    return 0;
+    }
 
-Enter a year: 1900
-1900 is not a leap year.
-Enter a year: 2012
-2012 is a leap year.
 
-----
-## 17. LINEAR SEARCH
-```C
-#include<stdio.h>
+## OUTPUT
 
-int check(int b[],int m,int o)
-{int p=-1;
-        for(int i=1;i<=m;i++)
-        {
-                if(b[i]==o)
-                 p = i;
-        }
+    Enter number of elements in array
+    6
+    Enter 6 integer(s)
+    45
+    63
+    12
+    23
+    89
+    77
+    Enter a number to search
+    23
+    23 is present at location 4.
 
-                        return p;
-        
-}
+ # 16. Write a C Program to Sort N Numbers in Ascending Order using Bubble Sort.
 
-void main()
-{
-        int n,num,index;
-        printf("enter the array size\n");
+    #include<stdio.h>
+    int main()
+     {
+        int i,n,k,temp;
+        printf("\n enter the array size\n");
         scanf("%d",&n);
         int a[n];
-        printf("enter the array elements\n");
-        for(int i=1;i<=n;i++)
-        {
+        printf("enter %d elements of array\n",n);
+        for(i=0;i<n;i++)
                 scanf("%d",&a[i]);
-        }
-        printf("now enter the number which you want to check\n whether it is present or not in entered array\n");
-
-        scanf("%d",&num);
-        index=check(a,n,num);
-        if(index==-1)
-        printf("element is not found\n");
-        else
-        printf("element is found at the position %d \n",index);
-}
-```
-----
-##  18. SUM OF TWO MATRIX
-```C
-   include<stdio.h>
-void main()
-{
-        int a[10][10],b[10][10],c[10][10];
-        int m,n,i,j;
-        printf("Enter size of matrix A as m,n:");
-        scanf("%d%d",&m,&n);
-        printf("\nEnter elements of matrix A rowwise m*n\n");
-        for(i=0;i<m;i++)
+        for(k=0;k<n-1;k++)
         {
-                for(j=0;j<n;j++)
+                for(i=0;i<n-k-1;i++)
                 {
-                        scanf("%d",&a[i][j]);
+                        if(a[i]>a[i+1])
+                        {
+                                temp=a[i];
+                                a[i]=a[i+1];
+                                a[i+1]=temp;
+                        }
                 }
         }
-        printf("enter the elements of second matrix\n");
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        scanf("%d",&b[i][j]);
-                }
-        }
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        c[i][j]=b[i][j]+a[i][j];
-                }
-        }
-        printf("\nSUM OF MATRIX A&B \n");
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        printf("%d    ",c[i][j]);
-                }
-                printf("\n");
-        }       
-}       
-```
+        printf("\n array elements after shorting\n");
+        for(i=0;i<n;i++)
+                printf("%d\t",a[i]);
+        printf("\n");
+      }
 
 
-----
-## 19. TRANSPOSE MATRIX
-```C
-#include<stdio.h>
-int main()
-{ 
-        int m,n,i,j;
-        printf("enter the number of rows and columns of matrix\n");
-        scanf("%d%d",&m,&n);
-        int a[m][n],b[m][n] ;
-                printf("enter the elements of  matrix row wise\n");
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                scanf("%d",&a[i][j]);
-                        }       
-                }       
-                
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                b[j][i]=a[i][j];
-                        }       
-                }       
-                printf("transpose  of matrix is \n");
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                printf("%d ",b[i][j]);
-                        }       
-                        printf("\n");
-                }       
-}               
-```
-----
-## 20. SUM OF DIGITS OF A NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int a,sum=0,c;
-        printf("enter the number\n");
-        scanf("%d",&a);
-        while(a!=0)
-        {
-        c=a%10;
-        sum+=c;
-        a=a/10;
-        }
-        printf("sum of digits is %d\n",sum);
-}
-```
-----
-## 21. CHECK PALINDROME NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int sum=0,digit;
-        int n, temp;
-        printf("enter any positive integer number\n");
-        scanf("%d",&n);
-        temp=n;
-        while(temp>0)
-        {
-                digit=temp%10;
-                temp/=10;
-                sum=sum*10+digit;
-        }
-        if(n==sum)
-                printf("\n %d is a palidrome number\n",n);
-        else
-                printf("\n %d is not a palidrome number\n",n);
-}
-```
- ----
- ## 22. CALL BY VALUE
- ```C
- #include<stdio.h>
-void swap(int a,int b);
-void main()
-{
-int x,y;
-printf("\n Enter value for x:");
-scanf("%d",&x);
-printf("\n Enter value for y:");
-scanf("%d",&y);
-printf("\n Before calling swap functin\n");
-printf("\n Value of x=%d,Value of y=%d\n",x,y);
-swap(x,y);
-printf("\n After returning from swap function");
-printf("\n Value of x=%d,value of y=%d\n",x,y);
-}
-void swap(int a,int b)
-{
-int temp;
-printf("\n Inside the function \n");
-printf("\n Value of a=%d,Value of b=%d before swaping\n",a,b);
-temp=a;
-a=b;
-b=temp;
-printf("\n Value of a=%d,Value of b=%d after swaping\n",a,b);
-}
-```
-----
-## 23. CALL BY REFERENCE
-```C
-#include<stdio.h>
-void swap(int *,int *);
-void main()
-{
-int x,y;
-printf("\n Enter value for x:");
-scanf("%d",&x);
-printf("\n Enter value for y:");
-scanf("%d",&y);
-printf("\n Before calling swap functin\n");
-printf("\n Value of x=%d,Value of y=%d\n",x,y);
-swap(&x,&y);
-printf("\n After returning from swap function");
-printf("\n Value of x=%d,value of y=%d\n",x,y);
-}
-void swap(int *a,int *b)
-{
-int temp;
-printf("\n Inside the function \n");
-printf("\n Value of a=%d,Value of b=%d before swaping\n",*a,*b);
-temp=*a;
-*a=*b;
-*b=temp;
-printf("\n Value of a=%d,Value of b=%d after swaping\n",*a,*b);
-}
-```
-----
-## 24. EMPLOYEE DETAILS USING STRUCTURE
-```C
-#include<stdio.h>
-#include<string.h>
-struct employee
-{
-        int code;
-        char name[20];
-        char department[20];
-        float salary;
-};
-void main()
-{
-        struct employee e;
-        printf("enter employee code\n");
-        scanf("%d",&e.code);
-        printf("enter employee name\n");
-        scanf("%s",&e.name);
-        printf("enter employee department\n");
-        scanf("%s",&e.department);
-        printf("enter employee salary\n");
-        scanf("%f",&e.salary);
-        printf("information about employee is \n");
-        printf("Employee code: %d \n",e.code);
-        printf("Employee name: %s \n",e.name);
-        printf("Employee department: %s \n",e.department);
-        printf("Employee salary: %f \n",e.salary);
-}
-```
-----
-## 25. FRACTION PRODUCT USING STRUCTURE
-```C
-#include<stdio.h>
-struct fraction
-{
-        int num;
-        int den;
-};
-void main()
-{
-        int rnum,rden;
-        struct fraction f1,f2;
-        printf("enter numerator and denominator of first fraction\n");
-        scanf("%d%d",&f1.num,&f1.den);
-        printf("enter numerator and denominator of second fraction\n");
-        scanf("%d%d",&f2.num,&f2.den);  
-        rnum=f1.num*f2.num;
-        rden=f1.den*f2.den;
-        printf("\nproduct is : %d/%d\n",rnum,rden);
-}
-```
+## OUTPUT
+
+    enter the array size
+    6
+    enter 6 elements of array
+    32
+    56
+    78
+    105
+    90
+    23
+
+    array elements after shorting
+    23   32   56   78   90   105	
+
+# 17. Write a C program to declare, assign and access a pointer variable.
+
+    #include <stdio.h>
+
+    int main()
+    {
+    int num;    /*declaration of integer variable*/
+    int *pNum;  /*declaration of integer pointer*/
+ 
+    pNum=& num; /*assigning address of num*/
+    num=100;    /*assigning 100 to variable num*/
+ 
+    //access value and address using variable num
+    printf("Using variable num:\n");
+    printf("value of num: %d\naddress of num: %u\n",num,&num);
+    //access value and address using pointer variable num
+    printf("Using pointer variable:\n");
+    printf("value of num: %d\naddress of num: %u\n",*pNum,pNum);
+ 
+    return 0;
+    }
+
+## OUTPUT
+
+    Using variable num:
+    value of num: 100
+    address of num: 2764564284
+    Using pointer variable:
+    value of num: 100
+    address of num: 2764564284
+     
+
+#  18. Write a C Program to Store Information of a Student Using Structure
+
+    #include <stdio.h>
+    struct student
+    {
+    char name[50];
+    int roll;
+    float marks;
+    } s[10];
+    int main()
+    {
+    int i;
+    printf("Enter information of students:\n");
+    // storing information
+    for(i=0; i<10; ++i)
+    {
+        s[i].roll = i+1;
+        printf("\nFor roll number%d,\n",s[i].roll);
+        printf("Enter name: ");
+        scanf("%s",s[i].name);
+        printf("Enter marks: ");
+        scanf("%f",&s[i].marks);
+        printf("\n");
+    }
+    printf("Displaying Information:\n\n");
+    // displaying information
+    for(i=0; i<10; ++i)
+    {
+        printf("\nRoll number: %d\n",i+1);
+        printf("Name: ");
+        puts(s[i].name);
+        printf("Marks: %.1f",s[i].marks);
+        printf("\n");
+    }
+    return 0;
+    }
+
+
+## OUTPUT
+ 
+    Enter information of students: 
+
+    For roll number1,
+    Enter name: Tom
+    Enter marks: 98
+
+    For roll number2,
+    Enter name: Jerry
+    Enter marks: 89
+    .
+    .
+    .
+    Displaying Information:
+
+    Roll number: 1
+    Name: Tom
+    Marks: 98
+    .
+    .
+    .
+
+# 19. Write a C Program to Find Factorial of a Number Using Recursion.
+
+    #include <stdio.h>
+    long int multiplyNumbers(int n);
+    int main()
+    {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
+     }
+    long int multiplyNumbers(int n)
+    {
+    if (n >= 1)
+        return n*multiplyNumbers(n-1);
+    else
+        return 1;
+    }     
+
+## OUTPUT
+
+    Enter a positive integer: 6
+    1 Factorial of 6 = 720
+
+# 20. Write a C Program to display Fibonacci Series using recursion,
+
+    #include<stdio.h>
+    int Fibonacci(int);
+    int main()
+    {
+    int n, i = 0, c;
+    scanf("%d",&n);
+    printf("Fibonacci series\n");
+    for ( c = 1 ; c <= n ; c++ )
+    {
+      printf("%d\n", Fibonacci(i));
+      i++; 
+    }
+    return 0;
+    }
+    int Fibonacci(int n)
+    {
+    if ( n == 0 )
+      return 0;
+    else if ( n == 1 )
+       return 1;
+    else
+       return ( Fibonacci(n-1) + Fibonacci(n-2) );
+     }
+
+## OUTPUT
+
+    5
+    Fibonacci series
+    0
+    1
+    1
+    2
+    3
